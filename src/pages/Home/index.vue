@@ -28,7 +28,8 @@ export default {
     Like,
     Floor,
     Brand
-  }
+  },
+  
 }
 </script>
 

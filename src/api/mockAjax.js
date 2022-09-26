@@ -10,7 +10,7 @@ import 'nprogress/nprogress.css';
 const requests = axios.create({
     //配置對象
     //基礎路徑 發請求的時候 路徑當中或出現api
-    baseURL:"/api",
+    baseURL:"/mock",
     timeout:5000,
 });
 //請求攔截器

@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <header class="header" :test='test()'>
     <!-- 头部的第一行 -->
     <div class="top">
       <div class="container">
@@ -56,20 +56,19 @@ export default {
     }
   },
   methods:{
+    test(){
+      return 'c8 8c '
+    },
     goSearch(){
       //字串寫法
       // this.$router.push("/search/" + this.keyWord + "?k=" + this.keyWord.toUpperCase())
     
       //物件寫法
-      this.$router.push({
-        name:"search",
-        params:{
-          keyword:this.keyWord
-        },
-        query:{
-          k:this.keyWord.toUpperCase()
-        }
-      })
+      if(this.$route.query){
+        let location = {name:"search",params:{keyword:this.keyWord || undefined}}
+        location.query = this.$route.query
+        this.$router.push(location)
+      }
     }
   }
 };
